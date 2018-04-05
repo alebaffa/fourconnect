@@ -5,7 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-import com.fourconnect.main.FourConnectGame;
 import org.junit.Test;
 
 public class FourConnectGameTest {
@@ -66,8 +65,8 @@ public class FourConnectGameTest {
     fourConnectGame.playerOneMove(1);
     fourConnectGame.playerOneMove(1);
     fourConnectGame.playerTwoMove(2);
-    assertTrue(fourConnectGame.isPlayerRedWinner());
-    assertFalse(fourConnectGame.isPlayerGreenWinner());
+    assertTrue(fourConnectGame.isPlayerOneWinner());
+    assertFalse(fourConnectGame.isPlayerTwoWinner());
     fourConnectGame.printBoard();
   }
 
@@ -83,8 +82,8 @@ public class FourConnectGameTest {
     fourConnectGame.playerOneMove(2);
     fourConnectGame.playerOneMove(2);
     fourConnectGame.printBoard();
-    assertTrue(fourConnectGame.isPlayerRedWinner());
-    assertFalse(fourConnectGame.isPlayerGreenWinner());
+    assertTrue(fourConnectGame.isPlayerOneWinner());
+    assertFalse(fourConnectGame.isPlayerTwoWinner());
   }
 
   @Test
@@ -95,7 +94,7 @@ public class FourConnectGameTest {
     fourConnectGame.playerOneMove(3);
     fourConnectGame.playerOneMove(4);
     fourConnectGame.printBoard();
-    assertTrue(fourConnectGame.isPlayerRedWinner());
+    assertTrue(fourConnectGame.isPlayerOneWinner());
   }
 
   @Test
@@ -110,8 +109,8 @@ public class FourConnectGameTest {
     fourConnectGame.playerOneMove(3);
     fourConnectGame.playerTwoMove(5);
     fourConnectGame.printBoard();
-    assertFalse(fourConnectGame.isPlayerRedWinner());
-    assertTrue(fourConnectGame.isPlayerGreenWinner());
+    assertFalse(fourConnectGame.isPlayerOneWinner());
+    assertTrue(fourConnectGame.isPlayerTwoWinner());
   }
 
   @Test
@@ -129,8 +128,8 @@ public class FourConnectGameTest {
     fourConnectGame.playerTwoMove(4);
 
     fourConnectGame.printBoard();
-    assertFalse(fourConnectGame.isPlayerRedWinner());
-    assertTrue(fourConnectGame.isPlayerGreenWinner());
+    assertFalse(fourConnectGame.isPlayerOneWinner());
+    assertTrue(fourConnectGame.isPlayerTwoWinner());
   }
 
   @Test
@@ -148,7 +147,7 @@ public class FourConnectGameTest {
     fourConnectGame.playerOneMove(4);
 
     fourConnectGame.printBoard();
-    assertTrue(fourConnectGame.isPlayerRedWinner());
-    assertFalse(fourConnectGame.isPlayerGreenWinner());
+    assertTrue(fourConnectGame.isPlayerOneWinner());
+    assertFalse(fourConnectGame.isPlayerTwoWinner());
   }
 }

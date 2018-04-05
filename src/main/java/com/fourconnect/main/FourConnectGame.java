@@ -24,7 +24,7 @@ public class FourConnectGame {
 
       System.out.println(board);
 
-      if (game.isPlayerRedWinner()) {
+      if (game.isPlayerOneWinner()) {
         System.out.println("Player 1 [RED] wins!");
         return;
       }
@@ -34,7 +34,7 @@ public class FourConnectGame {
 
       System.out.println(board);
 
-      if (game.isPlayerGreenWinner()) {
+      if (game.isPlayerTwoWinner()) {
         System.out.println("Player 2 [GREEN] wins!");
         return;
       }
@@ -43,13 +43,13 @@ public class FourConnectGame {
   }
 
   private static int getUserInput(Scanner scanner) {
-    String columnPlayer1 = scanner.next();
+    String input = scanner.next();
 
-    while (!columnPlayer1.matches("^[1-7]$")) {
+    while (!input.matches("^[1-7]$")) {
       System.out.print("Not valid. Please, choose column (1-" + Board.COLUMNS + "): ");
-      columnPlayer1 = scanner.next();
+      input = scanner.next();
     }
-    return Integer.parseInt(columnPlayer1);
+    return Integer.parseInt(input);
   }
 
   FourConnectGame() {
@@ -80,12 +80,12 @@ public class FourConnectGame {
     return board.countDiscInColumn(col);
   }
 
-  public boolean isPlayerRedWinner() {
+  public boolean isPlayerOneWinner() {
     return board.checkVertical(PLAYER_ONE) || board.checkHorizontal(PLAYER_ONE) || board
         .checkDiagonals(PLAYER_ONE);
   }
 
-  public boolean isPlayerGreenWinner() {
+  public boolean isPlayerTwoWinner() {
     return board.checkVertical(PLAYER_TWO) || board.checkHorizontal(PLAYER_TWO) || board
         .checkDiagonals(PLAYER_TWO);
   }
